@@ -1,129 +1,224 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+import random,time
+import os
+Kolor = 1
+card = 0
+Punkty = 0
 
-# C extensions
-*.so
+o=9
+i=8
+u=7
+y=6
+t=5
+r=4
+e=3
+w=2
+j=10
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+a=11
+a1=1
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+def clear():
+    os.system('cls' if os.name=='nt' else 'clear')
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+def Kolory():
+    color = random.randint(1,4)
+    if(color == 1):
+        Kolor = 'Pik'
+    elif(color == 2):
+        Kolor = 'Kier'
+    elif(color == 3):
+        Kolor = 'Trefl'
+    elif(color == 4):
+        Kolor = 'Karo'
 
-# Translations
-*.mo
-*.pot
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+def Cards():
+    card = random.randint(2,14)
 
-# Flask stuff:
-instance/
-.webassets-cache
+    
+    if(card == 14): AS()
+    
+    if(card == 13): KROL()
 
-# Scrapy stuff:
-.scrapy
+    if(card == 12): DAMA()
+    if(card == 11): JOPEK()
+    if(card == 10): TEN()
+    if(card == 9): NINE()
+    if(card == 8): EIGHT()
+    if(card == 7): SEVEN()
+    if(card == 6): SIX()
+    if(card == 5): FIVE()
+    if(card == 4): FOUR()
+    if(card == 3): THREE()
+    if(card == 2): TWO()
 
-# Sphinx documentation
-docs/_build/
+def AS():
+    #AS
+    Kolory()
+    
+    print('Wyslosowałeś Asa',Kolor,'\n')
+    d = input('Chciałbyś dostac 1pkt. czy 11pkt.(1/11)')
+    if(d == '11'):
+        Punkty + a
+    else:
+        Punkty + a1
+    print('Masz',Punkty,'Pkt.')    
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# PyBuilder
-target/
+def JOPEK():
+    #JOPEK
+    Kolory()
+    
+    Punkty + j
+    print('Wylosowałeś Jopka',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# Jupyter Notebook
-.ipynb_checkpoints
+def DAMA():
+    #DAMA
+    Kolory()
+    
+    print('wylosowałeś Dame',Kolor,'\n')
+    Punkty + j
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# IPython
-profile_default/
-ipython_config.py
+def KROL():
+    #KRÓL
+    Kolory()
+    
+    print('Wylosowałeś Króla',Kolor,'\n')
+    Punkty + j
+    print('Masz',Punkty,'Pkt')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# pyenv
-.python-version
+def TEN():
+    #10
+    Kolory()
+    
+    Punkty + j
+    print('Wylosowałeś 10 Dziesiątke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+def NINE():
+    #9
+    Kolory()
+    
+    Punkty + o
+    print('Wylosowałeś 9 Dziewiątke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
+def EIGHT():
+    #8
+    Kolory()
+    
+    Punkty + i
+    print('Wylosowałeś 8 Ósemke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+def SEVEN():
+    #7
+    Kolory()
+    
+    print('Wylosowałeś 7 Siódemke',Kolor,'\n')
+    Punkty + u
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# SageMath parsed files
-*.sage.py
+def SIX():
+    #6
+    Kolory()
+    
+    Punkty + y
+    print('Wylosowałeś 6 Szóstke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+def FIVE():
+    #5 
+    Kolory()
+    
+    Punkty + t
+    print('Wylosowałeś 5 Piątke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# Spyder project settings
-.spyderproject
-.spyproject
+def FOUR():
+    #4
+    Kolory()
+    
+    Punkty + r
+    print('Wylosowałeś 4 Czwórke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# Rope project settings
-.ropeproject
+def THREE():
+    #3
+    Kolory()
+    
+    Punkty + e
+    print('Wylosowałeś 3 Trójke',Kolor,'\n')
+    print('Masz','Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
 
-# mkdocs documentation
-/site
+def TWO():
+    #2
+    Kolory()
+    
+    Punkty + w
+    print('Wylosowałeś 2 Dwójke',Kolor,'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(3)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
+        
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+#Początek
+print('Witaj w Black Jacku')
+time.sleep(2)
+Gra = input('Chesz Zagrac w Wersje, PvE czy w PvP. Lub zajrzyj do zasad gry.\n')
+if(Gra == 'pvp'):
+    print('W PvP walczysz z innym graczem przy jednym komputerze \n')
+    Cards()
+    
 
-# Pyre type checker
-.pyre/
