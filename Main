@@ -5,23 +5,18 @@ card = 0
 Punkty = 0
 
 
-o=9
-i=8
-u=7
-h=6
-t=5
-r=4
-e=3
-w=2
-j=10
-
-a=11
-a1=1
 
 
-def clear():
+
+def Clear():
     os.system('cls' if os.name=='nt' else 'clear')
 
+def Check():
+    if(Punkty == 21):
+        Clear()
+        input('Brawo WYGRAŁEŚ, Uzbierałeś 21 Punktów')
+    elif(Punkty > 21):
+        input('Przegrałeś')
 
 
 
@@ -40,27 +35,56 @@ def Kolory():
 
 def Cards():
     card = random.randint(2,14)
+    
+
 
     
-    if(card == 14): AS()
-    if(card == 13): KROL()
-    if(card == 12): DAMA()
-    if(card == 11): JOP()
-    if(card == 10): TEN()
-    if(card == 9): NINE()
-    if(card == 8): EIGHT()
-    if(card == 7): SEVEN()
-    if(card == 6): SIX()
-    if(card == 5): FIVE()
-    if(card == 4): FOUR()
-    if(card == 3): THREE()
-    if(card == 2): TWO()
-    return Cards
+    if(card == 14):
+        AS()
+        Punkty += 11
+    if(card == 13):
+        KROL()
+        Punkty += 10
+    if(card == 12):
+        DAMA()
+        Punkty +=10
+    if(card == 11):
+        JOP()
+        Punkty += 10
+    if(card == 10):
+        TEN()
+        Punkty += 10
+    if(card == 9):
+        NINE()
+        Punkty += 9
+    if(card == 8):
+        EIGHT()
+        Punkty += 8
+    if(card == 7):
+        SEVEN()
+        Punkty += 7
+    if(card == 6):
+        SIX()
+        Punkty += 6
+    if(card == 5):
+        FIVE()
+        Punkty +=5
+    if(card == 4):
+        FOUR()
+        Punkty += 4
+    if(card == 3):
+        THREE()
+        Punkty += 3
+    if(card == 2):
+        TWO()
+        Punkty += 2
+
+
 
 def AS():
     #AS
     
-    Punkty + a
+    
     
     print('Wyslosowałeś Asa',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -68,12 +92,12 @@ def AS():
     y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
     if(y == 'Y'):
         Cards()
-    return Punkty
+    
 
 def JOP():
     #JOPEK
     
-    Punkty + j
+    
     
     print('Wylosowałeś Jopka',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -81,55 +105,14 @@ def JOP():
     y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
     if(y == 'Y'):
         Cards()
-    return Punkty
+    
 
 def DAMA():
     #DAMA
 
-    Punkty + j
+    
     
     print('wylosowałeś Dame',Kolory(),'\n')
-    Punkty + j
-    print('Masz',Punkty,'Pkt.')
-    time.sleep(2)
-    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
-    if(y == 'Y'):
-        Cards()
-  
-
-def KROL():
-    #KRÓL
-
-    Punkty + j
-    
-    print('Wylosowałeś Króla',Kolory(),'\n')
-    Punkty + j
-    print('Masz',Punkty,'Pkt')
-    time.sleep(2)
-    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
-    if(y == 'Y'):
-        Cards()
-  
-
-def TEN():
-    #10
-    
-    Punkty + j
-    
-    print('Wylosowałeś 10 Dziesiątke',Kolory(),'\n')
-    print('Masz',Punkty,'Pkt.')
-    time.sleep(2)
-    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
-    if(y == 'Y'):
-        Cards()
-  
-
-def NINE():
-    #9
-    
-    Punkty + o
-    
-    print('Wylosowałeś 9 Dziewiątke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
     time.sleep(2)
     y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
@@ -137,10 +120,49 @@ def NINE():
         Cards()
    
 
+def KROL():
+    #KRÓL
+
+    
+    
+    print('Wylosowałeś Króla',Kolory(),'\n')
+    print('Masz',Punkty,'Pkt')
+    time.sleep(2)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
+    
+
+def TEN():
+    #10
+    
+    
+    
+    print('Wylosowałeś 10 Dziesiątke',Kolory(),'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(2)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
+    
+
+def NINE():
+    #9
+    
+    
+    
+    print('Wylosowałeś 9 Dziewiątke',Kolory(),'\n')
+    print('Masz',Punkty,'Pkt.')
+    time.sleep(2)
+    y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
+    if(y == 'Y'):
+        Cards()
+    
+
 def EIGHT():
     #8
     
-    Punkty + i
+    
     
     print('Wylosowałeś 8 Ósemke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -149,10 +171,11 @@ def EIGHT():
     if(y == 'Y'):
         Cards()
    
+   
 def SEVEN():
     #7
     
-    Punkty + u
+    
     
     print('Wylosowałeś 7 Siódemke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -165,7 +188,7 @@ def SEVEN():
 def SIX():
     #6
     
-    Punkty + h
+    
     
     print('Wylosowałeś 6 Szóstke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -173,12 +196,12 @@ def SIX():
     y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
     if(y == 'Y'):
         Cards()
-   
+    
 
 def FIVE():
     #5 
     
-    Punkty + t
+    
     
     print('Wylosowałeś 5 Piątke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -186,12 +209,12 @@ def FIVE():
     y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
     if(y == 'Y'):
         Cards()
-    
+   
 
 def FOUR():
     #4
 
-    Punkty + r
+    
     
     print('Wylosowałeś 4 Czwórke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -200,13 +223,12 @@ def FOUR():
     if(y == 'Y'):
         Cards()
     
-
 def THREE():
     #3
-    Punkty + e
+    
  
     print('Wylosowałeś 3 Trójke',Kolory(),'\n')
-    print('Masz','Pkt.')
+    print('Masz',Punkty,'Pkt.')
     time.sleep(2)
     y = input('Chcesz jeszcze jedną karte wziaść? Y/N')
     if(y == 'Y'):
@@ -216,7 +238,7 @@ def THREE():
 def TWO():
     #2
 
-    Punkty + w
+    
     
     print('Wylosowałeś 2 Dwójke',Kolory(),'\n')
     print('Masz',Punkty,'Pkt.')
@@ -234,6 +256,11 @@ Gra = input('Chesz Zagrac w Wersje, PvE czy w PvP. Lub zajrzyj do zasad gry.\n')
 if(Gra == 'pvp'):
     print('W PvP walczysz z innym graczem przy jednym komputerze \n')
     Cards()
+    while True:
+        Check()
+    
+    
     
     
 
+    
